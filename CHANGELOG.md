@@ -5,6 +5,24 @@ All notable changes to the IRANELEMENT plugin will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.2] - 2024-08-16
+
+### Added
+- پشتیبانی خودکار از فونت وزیر برای سایت‌های فارسی
+- تشخیص خودکار زبان فارسی (fa_IR, fa, fa_AF, fa_FA)
+- اعمال خودکار فونت وزیر در تمام المان‌های المنتور
+- گزینه تنظیمات برای فعال/غیرفعال کردن قابلیت فارسی
+- پشتیبانی از فونت وزیر در پنل ویرایشگر المنتور
+
+### Changed
+- بهبود layout فرم‌ها با CSS Grid (2×2)
+- تغییر URL های پلاگین به GitHub repository
+- به‌روزرسانی نسخه به 1.0.2
+
+### Fixed
+- رفع مشکل CSS در پنل ادمین
+- بهبود responsive design برای موبایل
+
 ## [1.0.1] - 2024-08-16
 
 ### Added
@@ -63,6 +81,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## پشتیبانی
 
-- **وب‌سایت**: https://iranelement.ir
-- **GitHub**: https://github.com/sajjadazizi/iran-element
+- **GitHub**: https://github.com/arkinazizi/IRANELEMENT
 - **طراح**: Sajjad Azizi
