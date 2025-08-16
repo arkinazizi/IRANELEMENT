@@ -90,7 +90,7 @@ class IranElement {
     }
     
     public function admin_scripts($hook) {
-        if ($hook != 'settings_page_iranelement') {
+        if ($hook != 'toplevel_page_iranelement') {
             return;
         }
         
