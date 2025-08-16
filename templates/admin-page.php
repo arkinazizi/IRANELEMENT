@@ -50,41 +50,45 @@ if (!defined('ABSPATH')) {
                 <h3>🌐 تنظیمات عمومی فونت</h3>
                 <p>این تنظیمات به عنوان پیش‌فرض برای تمام المان‌ها اعمال می‌شود.</p>
                 
-                <div class="vfm-form-group">
-                    <label for="global_font_family">خانواده فونت:</label>
-                    <select id="global_font_family" name="global_font_family" required>
-                        <option value="Vazirmatn" <?php selected(($options['global_settings']['font_family'] ?? 'Vazirmatn'), 'Vazirmatn'); ?>>Vazirmatn (وزیر)</option>
-                        <option value="Tahoma" <?php selected(($options['global_settings']['font_family'] ?? 'Vazirmatn'), 'Tahoma'); ?>>Tahoma</option>
-                        <option value="Arial" <?php selected(($options['global_settings']['font_family'] ?? 'Vazirmatn'), 'Arial'); ?>>Arial</option>
-                    </select>
+                <div class="vfm-form-grid">
+                    <div class="vfm-form-group">
+                        <label for="global_font_family">خانواده فونت:</label>
+                        <select id="global_font_family" name="global_font_family" required>
+                            <option value="Vazirmatn" <?php selected(($options['global_settings']['font_family'] ?? 'Vazirmatn'), 'Vazirmatn'); ?>>Vazirmatn (وزیر)</option>
+                            <option value="Tahoma" <?php selected(($options['global_settings']['font_family'] ?? 'Vazirmatn'), 'Tahoma'); ?>>Tahoma</option>
+                            <option value="Arial" <?php selected(($options['global_settings']['font_family'] ?? 'Vazirmatn'), 'Arial'); ?>>Arial</option>
+                        </select>
+                    </div>
+                    
+                    <div class="vfm-form-group">
+                        <label for="global_font_size">سایز فونت:</label>
+                        <input type="text" id="global_font_size" name="global_font_size" value="<?php echo esc_attr($options['global_settings']['font_size'] ?? '16px'); ?>" placeholder="16px" required>
+                    </div>
                 </div>
                 
-                <div class="vfm-form-group">
-                    <label for="global_font_size">سایز فونت:</label>
-                    <input type="text" id="global_font_size" name="global_font_size" value="<?php echo esc_attr($options['global_settings']['font_size'] ?? '16px'); ?>" placeholder="16px" required>
-                </div>
-                
-                <div class="vfm-form-group">
-                    <label for="global_font_weight">وزن فونت:</label>
-                    <select id="global_font_weight" name="global_font_weight" required>
-                        <option value="100" <?php selected(($options['global_settings']['font_weight'] ?? '400'), '100'); ?>>100 - Thin</option>
-                        <option value="200" <?php selected(($options['global_settings']['font_weight'] ?? '400'), '200'); ?>>200 - Extra Light</option>
-                        <option value="300" <?php selected(($options['global_settings']['font_weight'] ?? '400'), '300'); ?>>300 - Light</option>
-                        <option value="400" <?php selected(($options['global_settings']['font_weight'] ?? '400'), '400'); ?>>400 - Regular</option>
-                        <option value="500" <?php selected(($options['global_settings']['font_weight'] ?? '400'), '500'); ?>>500 - Medium</option>
-                        <option value="600" <?php selected(($options['global_settings']['font_weight'] ?? '400'), '600'); ?>>600 - Semi Bold</option>
-                        <option value="700" <?php selected(($options['global_settings']['font_weight'] ?? '400'), '700'); ?>>700 - Bold</option>
-                        <option value="800" <?php selected(($options['global_settings']['font_weight'] ?? '400'), '800'); ?>>800 - Extra Bold</option>
-                        <option value="900" <?php selected(($options['global_settings']['font_weight'] ?? '400'), '900'); ?>>900 - Black</option>
-                    </select>
-                </div>
-                
-                <div class="vfm-form-group">
-                    <label for="global_font_style">استایل فونت:</label>
-                    <select id="global_font_style" name="global_font_style" required>
-                        <option value="normal" <?php selected(($options['global_settings']['font_style'] ?? 'normal'), 'normal'); ?>>Normal</option>
-                        <option value="italic" <?php selected(($options['global_settings']['font_style'] ?? 'normal'), 'italic'); ?>>Italic</option>
-                    </select>
+                <div class="vfm-form-grid">
+                    <div class="vfm-form-group">
+                        <label for="global_font_weight">وزن فونت:</label>
+                        <select id="global_font_weight" name="global_font_weight" required>
+                            <option value="100" <?php selected(($options['global_settings']['font_weight'] ?? '400'), '100'); ?>>100 - Thin</option>
+                            <option value="200" <?php selected(($options['global_settings']['font_weight'] ?? '400'), '200'); ?>>200 - Extra Light</option>
+                            <option value="300" <?php selected(($options['global_settings']['font_weight'] ?? '400'), '300'); ?>>300 - Light</option>
+                            <option value="400" <?php selected(($options['global_settings']['font_weight'] ?? '400'), '400'); ?>>400 - Regular</option>
+                            <option value="500" <?php selected(($options['global_settings']['font_weight'] ?? '400'), '500'); ?>>500 - Medium</option>
+                            <option value="600" <?php selected(($options['global_settings']['font_weight'] ?? '400'), '600'); ?>>600 - Semi Bold</option>
+                            <option value="700" <?php selected(($options['global_settings']['font_weight'] ?? '400'), '700'); ?>>700 - Bold</option>
+                            <option value="800" <?php selected(($options['global_settings']['font_weight'] ?? '400'), '800'); ?>>800 - Extra Bold</option>
+                            <option value="900" <?php selected(($options['global_settings']['font_weight'] ?? '400'), '900'); ?>>900 - Black</option>
+                        </select>
+                    </div>
+                    
+                    <div class="vfm-form-group">
+                        <label for="global_font_style">استایل فونت:</label>
+                        <select id="global_font_style" name="global_font_style" required>
+                            <option value="normal" <?php selected(($options['global_settings']['font_style'] ?? 'normal'), 'normal'); ?>>Normal</option>
+                            <option value="italic" <?php selected(($options['global_settings']['font_style'] ?? 'normal'), 'italic'); ?>>Italic</option>
+                        </select>
+                    </div>
                 </div>
                 
                 <button type="button" id="apply-global-to-all" class="vfm-save-button" style="background: rgba(255,255,255,0.2); margin-top: 15px;">
