@@ -245,7 +245,7 @@ class IranElement {
         $plugin_data = get_plugin_data(__FILE__);
         
         // GitHub repository information
-        $github_repo = 'sajjadazizi/iran-element';
+        $github_repo = 'arkinazizi/IRANELEMENT';
         $github_api_url = "https://api.github.com/repos/{$github_repo}/releases/latest";
         
         $response = wp_remote_get($github_api_url, array(
@@ -311,7 +311,7 @@ class IranElement {
         }
         
         // GitHub repository information
-        $github_repo = 'sajjadazizi/iran-element';
+        $github_repo = 'arkinazizi/IRANELEMENT';
         $github_api_url = "https://api.github.com/repos/{$github_repo}/releases/latest";
         
         $response = wp_remote_get($github_api_url, array(
