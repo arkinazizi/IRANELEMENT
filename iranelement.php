@@ -3,7 +3,7 @@
  * Plugin Name: IRANELEMENT
  * Plugin URI: https://iranelement.ir
  * Description: ایرانی‌سازی وردپرس و المنتور - امکان تنظیم فونت، سایز، وزن و استایل برای تگ‌های مختلف
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Sajjad Azizi
  * Author URI: https://iranelement.ir
  * License: GPL v2 or later
@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
 // Define plugin constants
 define('IRANELEMENT_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('IRANELEMENT_PLUGIN_PATH', plugin_dir_path(__FILE__));
-define('IRANELEMENT_VERSION', '1.0.0');
+define('IRANELEMENT_VERSION', '1.0.1');
 
 class IranElement {
     
@@ -244,6 +244,9 @@ class IranElement {
         $plugin_slug = basename(dirname(__FILE__)) . '/' . basename(__FILE__);
         $plugin_data = get_plugin_data(__FILE__);
         
+        // Debug: Log current version
+        error_log('IRANELEMENT Debug: Current version = ' . $plugin_data['Version']);
+        
         // GitHub repository information
         $github_repo = 'arkinazizi/IRANELEMENT';
         $github_api_url = "https://api.github.com/repos/{$github_repo}/releases/latest";
@@ -260,6 +263,10 @@ class IranElement {
             
             if ($release_data && isset($release_data['tag_name'])) {
                 $latest_version = ltrim($release_data['tag_name'], 'v');
+                
+                // Debug: Log GitHub version
+                error_log('IRANELEMENT Debug: GitHub version = ' . $latest_version);
+                error_log('IRANELEMENT Debug: Version comparison result = ' . version_compare($latest_version, $plugin_data['Version'], '>'));
                 
                 if (version_compare($latest_version, $plugin_data['Version'], '>')) {
                     // Get download URL from assets
