@@ -1,0 +1,127 @@
+/* Vazirmatn Font Family - Persian Font */
+@font-face {
+    font-family: 'Vazirmatn';
+    src: url('Vazirmatn-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vazirmatn';
+    src: url('Vazirmatn-ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vazirmatn';
+    src: url('Vazirmatn-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vazirmatn';
+    src: url('Vazirmatn-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vazirmatn';
+    src: url('Vazirmatn-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vazirmatn';
+    src: url('Vazirmatn-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vazirmatn';
+    src: url('Vazirmatn-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vazirmatn';
+    src: url('Vazirmatn-ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vazirmatn';
+    src: url('Vazirmatn-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Variable font support */
+@font-face {
+    font-family: 'Vazirmatn';
+    src: url('Vazirmatn[wght].woff2') format('woff2-variations');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Apply Vazirmatn to Persian text */
+html[lang="fa"], 
+html[lang="fa-IR"],
+html[lang="ar"],
+html[lang="ur"] {
+    font-family: 'Vazirmatn', 'Tahoma', 'Arial', sans-serif;
+}
+
+/* RTL support */
+[dir="rtl"] {
+    font-family: 'Vazirmatn', 'Tahoma', 'Arial', sans-serif;
+}
+
+/* Elementor specific */
+.elementor {
+    font-family: 'Vazirmatn', 'Tahoma', 'Arial', sans-serif;
+}
+
+.elementor h1,
+.elementor h2,
+.elementor h3,
+.elementor h4,
+.elementor h5,
+.elementor h6,
+.elementor p,
+.elementor span,
+.elementor a,
+.elementor button,
+.elementor div {
+    font-family: 'Vazirmatn', 'Tahoma', 'Arial', sans-serif;
+}
+
+/* WordPress admin */
+.wp-admin {
+    font-family: 'Vazirmatn', 'Tahoma', 'Arial', sans-serif;
+}
+
+#wpadminbar,
+#adminmenu,
+#adminmenuback,
+#adminmenuwrap,
+#wpcontent,
+#wpfooter {
+    font-family: 'Vazirmatn', 'Tahoma', 'Arial', sans-serif;
+}
