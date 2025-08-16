@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: IRANELEMENT
- * Plugin URI: https://iranelement.ir
+ * Plugin URI: https://github.com/arkinazizi/IRANELEMENT
  * Description: ایرانی‌سازی وردپرس و المنتور - امکان تنظیم فونت، سایز، وزن و استایل برای تگ‌های مختلف
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: Sajjad Azizi
- * Author URI: https://iranelement.ir
+ * Author URI: https://github.com/arkinazizi/IRANELEMENT
  * License: GPL v2 or later
  * Text Domain: iranelement
  * Domain Path: /languages
@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
 // Define plugin constants
 define('IRANELEMENT_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('IRANELEMENT_PLUGIN_PATH', plugin_dir_path(__FILE__));
-define('IRANELEMENT_VERSION', '1.0.1');
+define('IRANELEMENT_VERSION', '1.0.2');
 
 class IranElement {
     
