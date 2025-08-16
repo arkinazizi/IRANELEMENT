@@ -44,6 +44,11 @@ if (!defined('ABSPATH')) {
                     <input type="checkbox" id="elementor_font" name="elementor_font" <?php checked($options['elementor_font'] ?? true); ?>>
                     <label for="elementor_font">اعمال فونت وزیر در المنتور</label>
                 </div>
+                
+                <div class="vfm-checkbox-group">
+                    <input type="checkbox" id="elementor_persian_font" name="elementor_persian_font" <?php checked($options['elementor_persian_font'] ?? true); ?>>
+                    <label for="elementor_persian_font">اعمال خودکار فونت وزیر در المنتور برای سایت‌های فارسی</label>
+                </div>
             </div>
 
             <div class="vfm-global-settings">

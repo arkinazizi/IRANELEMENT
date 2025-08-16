@@ -29,6 +29,7 @@ class IranElement {
         add_action('admin_enqueue_scripts', array($this, 'admin_scripts'));
         add_action('wp_enqueue_scripts', array($this, 'frontend_scripts'));
         add_action('elementor/frontend/after_enqueue_styles', array($this, 'elementor_styles'));
+        add_action('wp_enqueue_scripts', array($this, 'elementor_persian_font'));
         add_action('wp_head', array($this, 'add_custom_css'));
         add_action('admin_head', array($this, 'add_admin_custom_css'));
         add_action('admin_init', array($this, 'check_for_updates'));
@@ -49,6 +50,7 @@ class IranElement {
             'enable_vazir_font' => true,
             'dashboard_font' => true,
             'elementor_font' => true,
+            'elementor_persian_font' => true,
             'font_weights' => array('100', '200', '300', '400', '500', '600', '700', '800', '900'),
             'elementor_settings' => array(
                 'h1' => array('font_family' => 'Vazirmatn', 'font_size' => '32px', 'font_weight' => '700', 'font_style' => 'normal'),
@@ -118,6 +120,61 @@ class IranElement {
         if (!empty($options['elementor_font'])) {
             wp_enqueue_style('vazir-font', IRANELEMENT_PLUGIN_URL . 'assets/fonts/vazirmatn.css', array(), IRANELEMENT_VERSION);
         }
+    }
+    
+    /**
+     * Apply Vazir font to Elementor when site language is Persian
+     */
+    public function elementor_persian_font() {
+        $options = get_option('iranelement_options');
+        
+        // Check if Persian font option is enabled
+        if (empty($options['elementor_persian_font'])) {
+            return;
+        }
+        
+        // Check if site language is Persian/Farsi
+        $locale = get_locale();
+        $is_persian = in_array($locale, array('fa_IR', 'fa', 'fa_AF', 'fa_FA'));
+        
+        if ($is_persian) {
+            wp_enqueue_style('vazir-font', IRANELEMENT_PLUGIN_URL . 'assets/fonts/vazirmatn.css', array(), IRANELEMENT_VERSION);
+            add_action('wp_head', array($this, 'add_elementor_persian_css'));
+        }
+    }
+    
+    /**
+     * Add CSS for Elementor Persian font
+     */
+    public function add_elementor_persian_css() {
+        echo '<style id="iranelement-elementor-persian-css">
+        /* Elementor Persian Font Styles */
+        .elementor *,
+        .elementor-widget *,
+        .elementor-section *,
+        .elementor-container *,
+        .elementor-column *,
+        .elementor-widget-container * {
+            font-family: "Vazirmatn", "Tahoma", "Arial", sans-serif !important;
+        }
+        
+        /* Elementor Editor */
+        .elementor-editor-active .elementor *,
+        .elementor-editor-active .elementor-widget * {
+            font-family: "Vazirmatn", "Tahoma", "Arial", sans-serif !important;
+        }
+        
+        /* Elementor Typography Controls */
+        .elementor-control-typography .elementor-control-input-wrapper select,
+        .elementor-control-typography .elementor-control-input-wrapper input {
+            font-family: "Vazirmatn", "Tahoma", "Arial", sans-serif !important;
+        }
+        
+        /* Elementor Panel */
+        .elementor-panel * {
+            font-family: "Vazirmatn", "Tahoma", "Arial", sans-serif !important;
+        }
+        </style>';
     }
     
     public function add_custom_css() {
@@ -192,6 +249,7 @@ class IranElement {
         $options['enable_vazir_font'] = isset($_POST['enable_vazir_font']);
         $options['dashboard_font'] = isset($_POST['dashboard_font']);
         $options['elementor_font'] = isset($_POST['elementor_font']);
+        $options['elementor_persian_font'] = isset($_POST['elementor_persian_font']);
         
         // Global settings
         $options['global_settings'] = array(
