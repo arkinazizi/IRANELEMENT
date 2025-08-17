@@ -1,69 +1,96 @@
-/* IRANELEMENT Admin Styles */
+/* IRANELEMENT Admin Styles - Markaz Ahan Inspired */
 .vfm-admin-container {
     max-width: 1200px;
     margin: 20px 0;
     font-family: 'Vazirmatn', 'Tahoma', 'Arial', sans-serif !important;
     direction: rtl;
     text-align: right;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
 .vfm-header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
     color: white;
-    padding: 30px;
-    border-radius: 10px;
-    margin-bottom: 30px;
+    padding: 40px 30px;
+    margin-bottom: 0;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.vfm-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+    opacity: 0.3;
 }
 
 .vfm-header h1 {
     margin: 0;
-    font-size: 28px;
-    font-weight: 700;
+    font-size: 32px;
+    font-weight: 800;
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .vfm-header p {
-    margin: 10px 0 0 0;
-    opacity: 0.9;
-    font-size: 16px;
+    margin: 15px 0 0 0;
+    opacity: 0.95;
+    font-size: 18px;
+    position: relative;
+    z-index: 2;
+    font-weight: 400;
 }
 
 .vfm-tabs {
     display: flex;
-    background: #f1f1f1;
-    border-radius: 8px 8px 0 0;
+    background: #f8f9fa;
+    border-bottom: 2px solid #e5e7eb;
     overflow: hidden;
     margin-bottom: 0;
+    padding: 0 20px;
 }
 
 .vfm-tab {
     flex: 1;
-    padding: 15px 20px;
-    background: #f1f1f1;
+    padding: 20px 25px;
+    background: transparent;
     border: none;
     cursor: pointer;
     font-family: 'Vazirmatn', 'Tahoma', 'Arial', sans-serif !important;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 500;
     transition: all 0.3s ease;
+    color: #6b7280;
+    border-bottom: 3px solid transparent;
+    position: relative;
 }
 
 .vfm-tab.active {
-    background: #fff;
-    color: #667eea;
+    background: #ffffff;
+    color: #dc2626;
     font-weight: 600;
+    border-bottom-color: #dc2626;
 }
 
 .vfm-tab:hover {
-    background: #e8e8e8;
+    background: #f3f4f6;
+    color: #dc2626;
 }
 
 .vfm-tab-content {
     display: none;
-    background: #fff;
-    padding: 30px;
-    border-radius: 0 0 8px 8px;
-    border: 1px solid #ddd;
+    background: #ffffff;
+    padding: 40px;
+    border: none;
     border-top: none;
 }
 
@@ -72,18 +99,25 @@
 }
 
 .vfm-section {
-    margin-bottom: 30px;
-    padding: 20px;
-    background: #f9f9f9;
-    border-radius: 8px;
-    border-left: 4px solid #667eea;
+    margin-bottom: 35px;
+    padding: 25px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border-left: 4px solid #dc2626;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.vfm-section:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
 }
 
 .vfm-section h3 {
     margin: 0 0 20px 0;
-    color: #333;
-    font-size: 18px;
-    font-weight: 600;
+    color: #1f2937;
+    font-size: 20px;
+    font-weight: 700;
 }
 
 .vfm-form-group {
@@ -133,8 +167,8 @@
 .vfm-form-group input[type="number"]:focus,
 .vfm-form-group select:focus {
     outline: none;
-    border-color: #667eea;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    border-color: #dc2626;
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
 }
 
 .vfm-checkbox-group {
@@ -145,9 +179,10 @@
 }
 
 .vfm-checkbox-group input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
-    accent-color: #667eea;
+    width: 20px;
+    height: 20px;
+    accent-color: #dc2626;
+    border-radius: 4px;
 }
 
 .vfm-checkbox-group label {
@@ -200,22 +235,24 @@
 }
 
 .vfm-save-button {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
     color: white;
     border: none;
-    padding: 15px 30px;
-    border-radius: 8px;
+    padding: 18px 35px;
+    border-radius: 10px;
     font-family: 'Vazirmatn', 'Tahoma', 'Arial', sans-serif !important;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-top: 20px;
+    margin-top: 25px;
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.2);
 }
 
 .vfm-save-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4);
+    background: linear-gradient(135deg, #b91c1c 0%, #991b1b 100%);
 }
 
 .vfm-save-button:active {
@@ -269,34 +306,54 @@
 }
 
 .vfm-global-settings {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
     color: white;
-    padding: 25px;
-    border-radius: 10px;
-    margin-bottom: 30px;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 35px;
+    box-shadow: 0 8px 25px rgba(220, 38, 38, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.vfm-global-settings::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+    opacity: 0.2;
 }
 
 .vfm-global-settings h3 {
     margin: 0 0 20px 0;
     color: white;
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 22px;
+    font-weight: 700;
+    position: relative;
+    z-index: 2;
 }
 
 .vfm-global-settings .vfm-form-group label {
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.95);
+    position: relative;
+    z-index: 2;
 }
 
 .vfm-global-settings input,
 .vfm-global-settings select {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
     border: none;
+    position: relative;
+    z-index: 2;
 }
 
 .vfm-global-settings input:focus,
 .vfm-global-settings select:focus {
     background: white;
-    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.4);
 }
 
 /* Responsive Design */
