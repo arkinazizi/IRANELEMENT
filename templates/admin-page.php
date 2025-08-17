@@ -7,6 +7,18 @@ if (!defined('ABSPATH')) {
 
 <div class="wrap vfm-admin-container">
     <div class="vfm-header">
+        <div class="vfm-header-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48">
+                <defs>
+                    <linearGradient id="header-ir-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#60A5FA;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#1E40AF;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <rect x="1" y="1" width="22" height="22" rx="6" fill="#000000" stroke="url(#header-ir-gradient)" stroke-width="1"/>
+                <text x="12" y="15" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="url(#header-ir-gradient)" letter-spacing="0.5">IR</text>
+            </svg>
+        </div>
         <h1>ایران المنت</h1>
         <p>ایرانی‌سازی وردپرس و المنتور - مدیریت کامل فونت‌ها، سایزها و استایل‌ها</p>
     </div>

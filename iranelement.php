@@ -5,7 +5,7 @@
  * Description: ایرانی‌سازی وردپرس و المنتور - امکان تنظیم فونت، سایز، وزن و استایل برای تگ‌های مختلف
  * Version: 1.0.2
  * Author: Sajjad Azizi
- * Author URI: https://github.com/arkinazizi/IRANELEMENT
+ * Author URI: https://github.com/arkinazizi/
  * License: GPL v2 or later
  * Text Domain: iranelement
  * Domain Path: /languages
@@ -86,7 +86,7 @@ class IranElement {
             'manage_options',
             'iranelement',
             array($this, 'admin_page'),
-            'data:image/svg+xml;base64,' . base64_encode('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><defs><linearGradient id="iran" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:#239F40;stop-opacity:1" /><stop offset="50%" style="stop-color:#FFFFFF;stop-opacity:1" /><stop offset="100%" style="stop-color:#DA0000;stop-opacity:1" /></linearGradient></defs><circle cx="12" cy="12" r="10" fill="url(#iran)" stroke="#333" stroke-width="1"/><circle cx="12" cy="12" r="3" fill="#DA0000"/><path d="M12 2v20M2 12h20" stroke="#DA0000" stroke-width="0.5" opacity="0.7"/></svg>'),
+            'data:image/svg+xml;base64,' . base64_encode('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><defs><linearGradient id="ir-gradient" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#60A5FA;stop-opacity:1" /><stop offset="100%" style="stop-color:#1E40AF;stop-opacity:1" /></linearGradient></defs><rect x="1" y="1" width="22" height="22" rx="6" fill="#000000" stroke="url(#ir-gradient)" stroke-width="1"/><text x="12" y="15" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" text-anchor="middle" fill="url(#ir-gradient)" letter-spacing="0.5">IR</text></svg>'),
             30
         );
     }

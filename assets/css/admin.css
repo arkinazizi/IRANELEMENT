@@ -50,6 +50,21 @@
     font-weight: 400;
 }
 
+.vfm-header-icon {
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.vfm-header-icon svg {
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease;
+}
+
+.vfm-header-icon svg:hover {
+    transform: scale(1.1);
+}
+
 .vfm-tabs {
     display: flex;
     background: #f8f9fa;
