@@ -25,7 +25,7 @@ if (!defined('ABSPATH')) {
 
     <div class="vfm-info-box">
         <h4>📋 راهنمای استفاده</h4>
-        <p>این افزونه به شما امکان می‌دهد فونت وزیر را به عنوان فونت اصلی دشبورد وردپرس و المنتور تنظیم کنید. می‌توانید برای هر تگ HTML تنظیمات جداگانه‌ای تعریف کنید.</p>
+        <p>این افزونه به شما امکان می‌دهد فونت وزیر را به عنوان فونت اصلی دشبورد وردپرس و المنتور تنظیم کنید. <strong>تنظیمات فونت فقط خانواده فونت را تغییر می‌دهد و شما همچنان می‌توانید از طریق تنظیمات خود المنتور، سایز، وزن و استایل فونت را کنترل کنید.</strong></p>
     </div>
 
     <div class="vfm-tabs">
@@ -65,52 +65,18 @@ if (!defined('ABSPATH')) {
 
             <div class="vfm-global-settings">
                 <h3>🌐 تنظیمات عمومی فونت</h3>
-                <p>این تنظیمات به عنوان پیش‌فرض برای تمام المان‌ها اعمال می‌شود.</p>
+                <p>این تنظیمات فقط خانواده فونت را تنظیم می‌کند. سایز، وزن و استایل فونت از طریق تنظیمات خود المنتور قابل کنترل است.</p>
                 
-                <div class="vfm-form-grid">
-                    <div class="vfm-form-group">
-                        <label for="global_font_family">خانواده فونت:</label>
-                        <select id="global_font_family" name="global_font_family" required>
-                            <option value="Vazirmatn" <?php selected(($options['global_settings']['font_family'] ?? 'Vazirmatn'), 'Vazirmatn'); ?>>Vazirmatn (وزیر)</option>
-                            <option value="Tahoma" <?php selected(($options['global_settings']['font_family'] ?? 'Vazirmatn'), 'Tahoma'); ?>>Tahoma</option>
-                            <option value="Arial" <?php selected(($options['global_settings']['font_family'] ?? 'Vazirmatn'), 'Arial'); ?>>Arial</option>
-                        </select>
-                    </div>
-                    
-                    <div class="vfm-form-group">
-                        <label for="global_font_size">سایز فونت:</label>
-                        <input type="text" id="global_font_size" name="global_font_size" value="<?php echo esc_attr($options['global_settings']['font_size'] ?? '16px'); ?>" placeholder="16px" required>
-                    </div>
+                <div class="vfm-form-group">
+                    <label for="global_font_family">خانواده فونت:</label>
+                    <select id="global_font_family" name="global_font_family" required>
+                        <option value="Vazirmatn" <?php selected(($options['global_settings']['font_family'] ?? 'Vazirmatn'), 'Vazirmatn'); ?>>Vazirmatn (وزیر)</option>
+                        <option value="Tahoma" <?php selected(($options['global_settings']['font_family'] ?? 'Vazirmatn'), 'Tahoma'); ?>>Tahoma</option>
+                        <option value="Arial" <?php selected(($options['global_settings']['font_family'] ?? 'Vazirmatn'), 'Arial'); ?>>Arial</option>
+                    </select>
                 </div>
                 
-                <div class="vfm-form-grid">
-                    <div class="vfm-form-group">
-                        <label for="global_font_weight">وزن فونت:</label>
-                        <select id="global_font_weight" name="global_font_weight" required>
-                            <option value="100" <?php selected(($options['global_settings']['font_weight'] ?? '400'), '100'); ?>>100 - Thin</option>
-                            <option value="200" <?php selected(($options['global_settings']['font_weight'] ?? '400'), '200'); ?>>200 - Extra Light</option>
-                            <option value="300" <?php selected(($options['global_settings']['font_weight'] ?? '400'), '300'); ?>>300 - Light</option>
-                            <option value="400" <?php selected(($options['global_settings']['font_weight'] ?? '400'), '400'); ?>>400 - Regular</option>
-                            <option value="500" <?php selected(($options['global_settings']['font_weight'] ?? '400'), '500'); ?>>500 - Medium</option>
-                            <option value="600" <?php selected(($options['global_settings']['font_weight'] ?? '400'), '600'); ?>>600 - Semi Bold</option>
-                            <option value="700" <?php selected(($options['global_settings']['font_weight'] ?? '400'), '700'); ?>>700 - Bold</option>
-                            <option value="800" <?php selected(($options['global_settings']['font_weight'] ?? '400'), '800'); ?>>800 - Extra Bold</option>
-                            <option value="900" <?php selected(($options['global_settings']['font_weight'] ?? '400'), '900'); ?>>900 - Black</option>
-                        </select>
-                    </div>
-                    
-                    <div class="vfm-form-group">
-                        <label for="global_font_style">استایل فونت:</label>
-                        <select id="global_font_style" name="global_font_style" required>
-                            <option value="normal" <?php selected(($options['global_settings']['font_style'] ?? 'normal'), 'normal'); ?>>Normal</option>
-                            <option value="italic" <?php selected(($options['global_settings']['font_style'] ?? 'normal'), 'italic'); ?>>Italic</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <button type="button" id="apply-global-to-all" class="vfm-save-button" style="background: rgba(255,255,255,0.2); margin-top: 15px;">
-                    اعمال تنظیمات عمومی به همه تگ‌ها
-                </button>
+
             </div>
 
             <div class="vfm-font-preview">
@@ -128,7 +94,7 @@ if (!defined('ABSPATH')) {
         <div id="elementor-settings" class="vfm-tab-content">
             <div class="vfm-section">
                 <h3>🎨 تنظیمات المنتور</h3>
-                <p>برای هر تگ HTML در المنتور تنظیمات جداگانه‌ای تعریف کنید:</p>
+                <p>برای هر تگ HTML در المنتور فقط خانواده فونت را تنظیم کنید. سایز، وزن و استایل فونت از طریق تنظیمات خود المنتور قابل کنترل است:</p>
             </div>
 
             <div class="vfm-tag-settings">
@@ -161,33 +127,7 @@ if (!defined('ABSPATH')) {
                             </select>
                         </div>
                         
-                        <div class="vfm-form-group">
-                            <label for="elementor_<?php echo $tag; ?>_font_size">سایز فونت:</label>
-                            <input type="text" id="elementor_<?php echo $tag; ?>_font_size" name="elementor_<?php echo $tag; ?>_font_size" value="<?php echo esc_attr($tag_settings['font_size'] ?? '16px'); ?>" placeholder="16px">
-                        </div>
-                        
-                        <div class="vfm-form-group">
-                            <label for="elementor_<?php echo $tag; ?>_font_weight">وزن فونت:</label>
-                            <select id="elementor_<?php echo $tag; ?>_font_weight" name="elementor_<?php echo $tag; ?>_font_weight">
-                                <option value="100" <?php selected(($tag_settings['font_weight'] ?? '400'), '100'); ?>>100 - Thin</option>
-                                <option value="200" <?php selected(($tag_settings['font_weight'] ?? '400'), '200'); ?>>200 - Extra Light</option>
-                                <option value="300" <?php selected(($tag_settings['font_weight'] ?? '400'), '300'); ?>>300 - Light</option>
-                                <option value="400" <?php selected(($tag_settings['font_weight'] ?? '400'), '400'); ?>>400 - Regular</option>
-                                <option value="500" <?php selected(($tag_settings['font_weight'] ?? '400'), '500'); ?>>500 - Medium</option>
-                                <option value="600" <?php selected(($tag_settings['font_weight'] ?? '400'), '600'); ?>>600 - Semi Bold</option>
-                                <option value="700" <?php selected(($tag_settings['font_weight'] ?? '400'), '700'); ?>>700 - Bold</option>
-                                <option value="800" <?php selected(($tag_settings['font_weight'] ?? '400'), '800'); ?>>800 - Extra Bold</option>
-                                <option value="900" <?php selected(($tag_settings['font_weight'] ?? '400'), '900'); ?>>900 - Black</option>
-                            </select>
-                        </div>
-                        
-                        <div class="vfm-form-group">
-                            <label for="elementor_<?php echo $tag; ?>_font_style">استایل فونت:</label>
-                            <select id="elementor_<?php echo $tag; ?>_font_style" name="elementor_<?php echo $tag; ?>_font_style">
-                                <option value="normal" <?php selected(($tag_settings['font_style'] ?? 'normal'), 'normal'); ?>>Normal</option>
-                                <option value="italic" <?php selected(($tag_settings['font_style'] ?? 'normal'), 'italic'); ?>>Italic</option>
-                            </select>
-                        </div>
+                        <p style="color: #666; font-size: 12px; margin: 5px 0 0 0;">سایز، وزن و استایل فونت از طریق تنظیمات خود المنتور قابل کنترل است.</p>
                     </div>
                     <?php
                 }

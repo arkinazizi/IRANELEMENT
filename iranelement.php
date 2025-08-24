@@ -45,30 +45,26 @@ class IranElement {
     }
     
     public function activate() {
-        // Set default options
+        // Set default options - only font family settings
         $default_options = array(
             'enable_vazir_font' => true,
             'dashboard_font' => true,
             'elementor_font' => true,
             'elementor_persian_font' => true,
-            'font_weights' => array('100', '200', '300', '400', '500', '600', '700', '800', '900'),
             'elementor_settings' => array(
-                'h1' => array('font_family' => 'Vazirmatn', 'font_size' => '32px', 'font_weight' => '700', 'font_style' => 'normal'),
-                'h2' => array('font_family' => 'Vazirmatn', 'font_size' => '28px', 'font_weight' => '600', 'font_style' => 'normal'),
-                'h3' => array('font_family' => 'Vazirmatn', 'font_size' => '24px', 'font_weight' => '600', 'font_style' => 'normal'),
-                'h4' => array('font_family' => 'Vazirmatn', 'font_size' => '20px', 'font_weight' => '500', 'font_style' => 'normal'),
-                'h5' => array('font_family' => 'Vazirmatn', 'font_size' => '18px', 'font_weight' => '500', 'font_style' => 'normal'),
-                'h6' => array('font_family' => 'Vazirmatn', 'font_size' => '16px', 'font_weight' => '500', 'font_style' => 'normal'),
-                'p' => array('font_family' => 'Vazirmatn', 'font_size' => '16px', 'font_weight' => '400', 'font_style' => 'normal'),
-                'span' => array('font_family' => 'Vazirmatn', 'font_size' => '14px', 'font_weight' => '400', 'font_style' => 'normal'),
-                'a' => array('font_family' => 'Vazirmatn', 'font_size' => '16px', 'font_weight' => '400', 'font_style' => 'normal'),
-                'button' => array('font_family' => 'Vazirmatn', 'font_size' => '16px', 'font_weight' => '500', 'font_style' => 'normal'),
+                'h1' => array('font_family' => 'Vazirmatn'),
+                'h2' => array('font_family' => 'Vazirmatn'),
+                'h3' => array('font_family' => 'Vazirmatn'),
+                'h4' => array('font_family' => 'Vazirmatn'),
+                'h5' => array('font_family' => 'Vazirmatn'),
+                'h6' => array('font_family' => 'Vazirmatn'),
+                'p' => array('font_family' => 'Vazirmatn'),
+                'span' => array('font_family' => 'Vazirmatn'),
+                'a' => array('font_family' => 'Vazirmatn'),
+                'button' => array('font_family' => 'Vazirmatn'),
             ),
             'global_settings' => array(
-                'font_family' => 'Vazirmatn',
-                'font_size' => '16px',
-                'font_weight' => '400',
-                'font_style' => 'normal'
+                'font_family' => 'Vazirmatn'
             )
         );
         
@@ -148,31 +144,31 @@ class IranElement {
      */
     public function add_elementor_persian_css() {
         echo '<style id="iranelement-elementor-persian-css">
-        /* Elementor Persian Font Styles */
+        /* Elementor Persian Font Styles - Only font-family, let users control size/weight/style */
         .elementor *,
         .elementor-widget *,
         .elementor-section *,
         .elementor-container *,
         .elementor-column *,
         .elementor-widget-container * {
-            font-family: "Vazirmatn", "Tahoma", "Arial", sans-serif !important;
+            font-family: "Vazirmatn", "Tahoma", "Arial", sans-serif;
         }
         
         /* Elementor Editor */
         .elementor-editor-active .elementor *,
         .elementor-editor-active .elementor-widget * {
-            font-family: "Vazirmatn", "Tahoma", "Arial", sans-serif !important;
+            font-family: "Vazirmatn", "Tahoma", "Arial", sans-serif;
         }
         
         /* Elementor Typography Controls */
         .elementor-control-typography .elementor-control-input-wrapper select,
         .elementor-control-typography .elementor-control-input-wrapper input {
-            font-family: "Vazirmatn", "Tahoma", "Arial", sans-serif !important;
+            font-family: "Vazirmatn", "Tahoma", "Arial", sans-serif;
         }
         
         /* Elementor Panel */
         .elementor-panel * {
-            font-family: "Vazirmatn", "Tahoma", "Arial", sans-serif !important;
+            font-family: "Vazirmatn", "Tahoma", "Arial", sans-serif;
         }
         </style>';
     }
@@ -204,17 +200,17 @@ class IranElement {
     private function generate_custom_css($options) {
         $css = '';
         
-        // Global settings
+        // Global settings - only apply font-family, let users control size/weight/style
         if (!empty($options['global_settings'])) {
             $global = $options['global_settings'];
-            $css .= "body, html { font-family: '{$global['font_family']}', sans-serif !important; font-size: {$global['font_size']} !important; font-weight: {$global['font_weight']} !important; font-style: {$global['font_style']} !important; }\n";
+            $css .= "body, html { font-family: '{$global['font_family']}', sans-serif; }\n";
         }
         
-        // Elementor specific settings
+        // Elementor specific settings - only apply font-family as fallback
         if (!empty($options['elementor_settings'])) {
             foreach ($options['elementor_settings'] as $tag => $settings) {
-                $css .= ".elementor h1, .elementor h2, .elementor h3, .elementor h4, .elementor h5, .elementor h6, .elementor p, .elementor span, .elementor a, .elementor button { font-family: '{$settings['font_family']}', sans-serif !important; }\n";
-                $css .= ".elementor {$tag} { font-family: '{$settings['font_family']}', sans-serif !important; font-size: {$settings['font_size']} !important; font-weight: {$settings['font_weight']} !important; font-style: {$settings['font_style']} !important; }\n";
+                // Only set font-family as fallback, don't override size/weight/style
+                $css .= ".elementor {$tag} { font-family: '{$settings['font_family']}', sans-serif; }\n";
             }
         }
         
@@ -251,24 +247,18 @@ class IranElement {
         $options['elementor_font'] = isset($_POST['elementor_font']);
         $options['elementor_persian_font'] = isset($_POST['elementor_persian_font']);
         
-        // Global settings
+        // Global settings - only font family
         $options['global_settings'] = array(
-            'font_family' => sanitize_text_field($_POST['global_font_family']),
-            'font_size' => sanitize_text_field($_POST['global_font_size']),
-            'font_weight' => sanitize_text_field($_POST['global_font_weight']),
-            'font_style' => sanitize_text_field($_POST['global_font_style'])
+            'font_family' => sanitize_text_field($_POST['global_font_family'])
         );
         
-        // Elementor settings
+        // Elementor settings - only font family
         $elementor_settings = array();
         $tags = array('h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'span', 'a', 'button');
         
         foreach ($tags as $tag) {
             $elementor_settings[$tag] = array(
-                'font_family' => sanitize_text_field($_POST["elementor_{$tag}_font_family"]),
-                'font_size' => sanitize_text_field($_POST["elementor_{$tag}_font_size"]),
-                'font_weight' => sanitize_text_field($_POST["elementor_{$tag}_font_weight"]),
-                'font_style' => sanitize_text_field($_POST["elementor_{$tag}_font_style"])
+                'font_family' => sanitize_text_field($_POST["elementor_{$tag}_font_family"])
             );
         }
         

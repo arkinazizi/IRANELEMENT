@@ -14,29 +14,7 @@ jQuery(document).ready(function($) {
         $('#' + target).addClass('active');
     });
     
-    // Global settings apply to all tags
-    $('#apply-global-to-all').on('click', function() {
-        var globalFamily = $('#global_font_family').val();
-        var globalSize = $('#global_font_size').val();
-        var globalWeight = $('#global_font_weight').val();
-        var globalStyle = $('#global_font_style').val();
-        
-        // Apply to all elementor tag inputs
-        $('[id^="elementor_"]').each(function() {
-            var id = $(this).attr('id');
-            if (id.includes('font_family')) {
-                $(this).val(globalFamily);
-            } else if (id.includes('font_size')) {
-                $(this).val(globalSize);
-            } else if (id.includes('font_weight')) {
-                $(this).val(globalWeight);
-            } else if (id.includes('font_style')) {
-                $(this).val(globalStyle);
-            }
-        });
-        
-        showNotice('تنظیمات عمومی به همه تگ‌ها اعمال شد.', 'success');
-    });
+
     
     // Font preview functionality
     $('.vfm-form-group input, .vfm-form-group select').on('change', function() {
@@ -45,11 +23,8 @@ jQuery(document).ready(function($) {
     
     function updateFontPreview() {
         var family = $('#global_font_family').val() || 'Vazirmatn';
-        var size = $('#global_font_size').val() || '16px';
-        var weight = $('#global_font_weight').val() || '400';
-        var style = $('#global_font_style').val() || 'normal';
         
-        var previewStyle = 'font-family: "' + family + '", sans-serif; font-size: ' + size + '; font-weight: ' + weight + '; font-style: ' + style + ';';
+        var previewStyle = 'font-family: "' + family + '", sans-serif;';
         
         $('.vfm-font-preview').attr('style', previewStyle);
     }
@@ -73,15 +48,7 @@ jQuery(document).ready(function($) {
             }
         });
         
-        // Validate font sizes
-        $('input[id*="font_size"]').each(function() {
-            var value = $(this).val();
-            if (value && !/^\d+(\.\d+)?(px|em|rem|%)$/.test(value)) {
-                isValid = false;
-                errors.push('سایز فونت باید به فرمت صحیح باشد (مثل: 16px, 1.2em)');
-                $(this).addClass('error');
-            }
-        });
+
         
         if (!isValid) {
             e.preventDefault();
